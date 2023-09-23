@@ -19,6 +19,7 @@
 		648E984C2ABEB14B00BCB09F /* ShiYetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E984B2ABEB14B00BCB09F /* ShiYetTests.swift */; };
 		648E98562ABEB14B00BCB09F /* ShiYetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98552ABEB14B00BCB09F /* ShiYetUITests.swift */; };
 		648E98582ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98572ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift */; };
+		648E98682ABF68CB00BCB09F /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 648E98672ABF68CB00BCB09F /* SQLite */; };
 		F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648E98682ABF68CB00BCB09F /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +165,9 @@
 			dependencies = (
 			);
 			name = ShiYet;
+			packageProductDependencies = (
+				648E98672ABF68CB00BCB09F /* SQLite */,
+			);
 			productName = ShiYet;
 			productReference = 648E98312ABEB14900BCB09F /* ShiYet.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 648E98282ABEB14900BCB09F;
+			packageReferences = (
+				648E98662ABF68CA00BCB09F /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = 648E98322ABEB14900BCB09F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -628,6 +636,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		648E98662ABF68CA00BCB09F /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		648E98672ABF68CB00BCB09F /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 648E98662ABF68CA00BCB09F /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 648E98292ABEB14900BCB09F /* Project object */;
 }
