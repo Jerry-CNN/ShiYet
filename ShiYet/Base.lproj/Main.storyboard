@@ -81,6 +81,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Start Shitting"/>
                                 <connections>
                                     <action selector="StartShitting:" destination="msM-xc-Orj" eventType="touchUpInside" id="TTu-OW-84g"/>
+                                    <segue destination="c6e-dD-G1t" kind="show" identifier="FeedbackSegue" id="I7S-b1-PFT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypy-ok-f0g">
@@ -101,7 +102,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIv-ir-5Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624.63768115942037" y="-302.00892857142856"/>
+            <point key="canvasLocation" x="614" y="-392"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bEe-qg-UFU">
+            <objects>
+                <viewController id="c6e-dD-G1t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tjE-lY-SAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3T-ee-5Y9">
+                                <rect key="frame" x="156" y="112" width="53" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="quit"/>
+                                <connections>
+                                    <action selector="Quit:" destination="KKy-II-GHu" eventType="touchUpInside" id="elX-1U-CRV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nps-fB-MMa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sbm-d6-CH5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pc4-fO-eYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KKy-II-GHu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1430.4347826086957" y="-400.44642857142856"/>
         </scene>
         <!--FirstScreen-->
         <scene sceneID="TAU-Gn-yHL">

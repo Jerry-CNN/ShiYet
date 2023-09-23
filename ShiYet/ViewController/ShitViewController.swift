@@ -37,6 +37,8 @@ class ShitViewController: UIViewController {
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     
     func startShitting() {
+        
+        elapsedTimeLabel.text = formattedTime(time: 00)
         // Record the start time
         startTime = Date()
         
@@ -54,23 +56,24 @@ class ShitViewController: UIViewController {
         // Stop the timer
         timer?.invalidate()
         timer = nil
-        
+
         // Hide the elapsed time label
-        elapsedTimeLabel.isHidden = true
-        
+        //elapsedTimeLabel.isHidden = true
+
         // Calculate the elapsed time
         if let startTime = startTime {
             let endTime = Date()
             let elapsedTime = endTime.timeIntervalSince(startTime)
-            
+
             // You can store the elapsed time or use it as needed
             print("Elapsed Time: \(elapsedTime) seconds")
         }
-        
-        // Change the button text
 
         // Reset the shitting flag
         isShitting = false
+
+        // Perform the segue to the "Quit" page
+        performSegue(withIdentifier: "FeedbackSegue", sender: self)
     }
 
     
