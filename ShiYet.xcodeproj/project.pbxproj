@@ -11,6 +11,8 @@
 		48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */; };
 		48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */; };
 		48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C6612ABF445200129BA3 /* FeedbackViewController.swift */; };
+		48D2C6752ABF76F800129BA3 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 48D2C6742ABF76F800129BA3 /* SQLite */; };
+		48D2C6772ABF7D5F00129BA3 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C6762ABF7D5F00129BA3 /* ReportViewController.swift */; };
 		648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98342ABEB14900BCB09F /* AppDelegate.swift */; };
 		648E98372ABEB14900BCB09F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98362ABEB14900BCB09F /* SceneDelegate.swift */; };
 		648E983C2ABEB14900BCB09F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648E983A2ABEB14900BCB09F /* Main.storyboard */; };
@@ -44,6 +46,7 @@
 		48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisStatViewController.swift; sourceTree = "<group>"; };
 		48D2C6612ABF445200129BA3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		48D2C6762ABF7D5F00129BA3 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		648E98312ABEB14900BCB09F /* ShiYet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiYet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		648E98342ABEB14900BCB09F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		648E98362ABEB14900BCB09F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D2C6752ABF76F800129BA3 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +93,7 @@
 			children = (
 				48D2C65A2ABF345700129BA3 /* ShitViewController.swift */,
 				48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */,
+				48D2C6762ABF7D5F00129BA3 /* ReportViewController.swift */,
 				48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */,
 				48D2C6612ABF445200129BA3 /* FeedbackViewController.swift */,
 			);
@@ -163,6 +168,9 @@
 			dependencies = (
 			);
 			name = ShiYet;
+			packageProductDependencies = (
+				48D2C6742ABF76F800129BA3 /* SQLite */,
+			);
 			productName = ShiYet;
 			productReference = 648E98312ABEB14900BCB09F /* ShiYet.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 648E98282ABEB14900BCB09F;
+			packageReferences = (
+				48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 648E98322ABEB14900BCB09F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -278,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D2C6772ABF7D5F00129BA3 /* ReportViewController.swift in Sources */,
 				F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */,
 				48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */,
 				48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */,
@@ -628,6 +640,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48D2C6742ABF76F800129BA3 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 648E98292ABEB14900BCB09F /* Project object */;
 }
