@@ -54,6 +54,7 @@ class DatabaseManager {
             print("Table created successfully.")
         } catch {
             print("Error creating table: \(error)")
+            print("-------------------------------")
         }
     }
 
