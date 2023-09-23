@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class  ShitViewController: UIViewController{
+class ShitViewController: UIViewController{
     
     var timer: Timer?
     var startTime: Date?
@@ -71,7 +71,7 @@ class  ShitViewController: UIViewController{
         }
 
         // Create an instance of FeedbackViewController
-        let feedbackVC = FeedbackViewController.makeFeedbackVC(current_time: startTime)
+        let feedbackVC = FeedbackViewController.makeFeedbackVC(current_time: startTime!)
 
         // Present the FeedbackViewController
         self.present(feedbackVC, animated: true, completion: nil)
