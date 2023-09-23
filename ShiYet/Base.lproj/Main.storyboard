@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbS-Ex-8SB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbS-Ex-8SB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--His Stat View Controller-->
+        <!--Item-->
         <scene sceneID="ero-ke-pd6">
             <objects>
                 <viewController id="3H8-rZ-uQs" customClass="HisStatViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,15 +28,15 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C8f-Zv-2ZV"/>
-                        <color key="backgroundColor" red="0.94333755970001221" green="0.78183469251834081" blue="0.66379894262592665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="poop (3)" selectedImage="poop" id="1lJ-UE-7dA"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="1lJ-UE-7dA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtN-vt-Ibu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1084" y="817"/>
+            <point key="canvasLocation" x="-257" y="882"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--Item 2-->
         <scene sceneID="SMm-U0-W4c">
             <objects>
                 <viewController id="mBg-sl-yXc" customClass="CalendarViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,16 +57,16 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cHt-sL-Dam"/>
-                        <color key="backgroundColor" red="0.88803476664023884" green="1" blue="0.86757782802718031" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="calendar (2)" selectedImage="calendar" id="Szg-6I-IMO"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Szg-6I-IMO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMs-Bd-m6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8pd-dh-7fc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="817"/>
+            <point key="canvasLocation" x="627" y="305"/>
         </scene>
-        <!--Shit View Controller-->
+        <!--Item 1-->
         <scene sceneID="dXQ-QX-5Cn">
             <objects>
                 <viewController id="msM-xc-Orj" customClass="ShitViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,62 +74,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-YL-UBV">
-                                <rect key="frame" x="126" y="111" width="75" height="381"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-85-JUx">
+                                <rect key="frame" x="50" y="392" width="314" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Shitting"/>
                                 <connections>
-                                    <action selector="test:" destination="daa-OL-V8T" eventType="touchUpInside" id="cBx-y4-QFB"/>
-                                    <action selector="test:" destination="msM-xc-Orj" eventType="touchUpInside" id="elZ-Qx-Rxd"/>
+                                    <action selector="StartShitting:" destination="msM-xc-Orj" eventType="touchUpInside" id="TTu-OW-84g"/>
+                                    <segue destination="c6e-dD-G1t" kind="show" identifier="FeedbackSegue" id="I7S-b1-PFT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-r9-rTQ">
-                                <rect key="frame" x="192" y="673" width="75" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypy-ok-f0g">
+                                <rect key="frame" x="60" y="239" width="296" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FY1-EL-lRc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="q5K-dn-wcy"/>
+                    <connections>
+                        <outlet property="elapsedTimeLabel" destination="ypy-ok-f0g" id="MYN-qb-koy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIv-ir-5Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614" y="-392"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bEe-qg-UFU">
+            <objects>
+                <viewController id="c6e-dD-G1t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tjE-lY-SAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3T-ee-5Y9">
+                                <rect key="frame" x="156" y="112" width="53" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="quit"/>
                                 <connections>
-                                    <action selector="test2:" destination="msM-xc-Orj" eventType="touchUpInside" id="Pxm-Nd-cyX"/>
+                                    <action selector="Quit:" destination="KKy-II-GHu" eventType="touchUpInside" id="elX-1U-CRV"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="FY1-EL-lRc"/>
-                        <color key="backgroundColor" red="0.22215035108575387" green="0.99115253584742702" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="Nps-fB-MMa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="analytics" selectedImage="analysis" id="q5K-dn-wcy"/>
+                    <navigationItem key="navigationItem" id="Sbm-d6-CH5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rIv-ir-5Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="daa-OL-V8T" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pc4-fO-eYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KKy-II-GHu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="542" y="817"/>
+            <point key="canvasLocation" x="1430.4347826086957" y="-400.44642857142856"/>
         </scene>
         <!--FirstScreen-->
         <scene sceneID="TAU-Gn-yHL">
             <objects>
-                <tabBarController storyboardIdentifier="TabBar" title="FirstScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbS-Ex-8SB" sceneMemberID="viewController">
+                <tabBarController title="FirstScreen" id="cbS-Ex-8SB" sceneMemberID="viewController">
                     <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8TS-ea-j3g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3H8-rZ-uQs" kind="relationship" relationship="viewControllers" id="REV-HN-uOW"/>
-                        <segue destination="mBg-sl-yXc" kind="relationship" relationship="viewControllers" id="fXG-aT-SEY"/>
                         <segue destination="msM-xc-Orj" kind="relationship" relationship="viewControllers" id="n6l-os-wRz"/>
+                        <segue destination="mBg-sl-yXc" kind="relationship" relationship="viewControllers" id="fXG-aT-SEY"/>
+                        <segue destination="3H8-rZ-uQs" kind="relationship" relationship="viewControllers" id="REV-HN-uOW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UU1-FY-Nhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="56"/>
+            <point key="canvasLocation" x="-262" y="1"/>
         </scene>
     </scenes>
     <resources>
-        <image name="analysis" width="32" height="32"/>
-        <image name="analytics" width="32" height="32"/>
-        <image name="calendar" width="32" height="32"/>
-        <image name="calendar (2)" width="32" height="32"/>
-        <image name="poop" width="32" height="32"/>
-        <image name="poop (3)" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
