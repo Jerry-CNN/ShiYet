@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48D2C65B2ABF345700129BA3 /* ShitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65A2ABF345700129BA3 /* ShitViewController.swift */; };
+		48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */; };
+		48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */; };
 		648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98342ABEB14900BCB09F /* AppDelegate.swift */; };
 		648E98372ABEB14900BCB09F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98362ABEB14900BCB09F /* SceneDelegate.swift */; };
-		648E98392ABEB14900BCB09F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98382ABEB14900BCB09F /* ViewController.swift */; };
 		648E983C2ABEB14900BCB09F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648E983A2ABEB14900BCB09F /* Main.storyboard */; };
 		648E983E2ABEB14B00BCB09F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 648E983D2ABEB14B00BCB09F /* Assets.xcassets */; };
 		648E98412ABEB14B00BCB09F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648E983F2ABEB14B00BCB09F /* LaunchScreen.storyboard */; };
@@ -36,10 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48D2C65A2ABF345700129BA3 /* ShitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShitViewController.swift; sourceTree = "<group>"; };
+		48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisStatViewController.swift; sourceTree = "<group>"; };
 		648E98312ABEB14900BCB09F /* ShiYet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiYet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		648E98342ABEB14900BCB09F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		648E98362ABEB14900BCB09F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		648E98382ABEB14900BCB09F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		648E983B2ABEB14900BCB09F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		648E983D2ABEB14B00BCB09F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		648E98402ABEB14B00BCB09F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48D2C65C2ABF35D500129BA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				48D2C65A2ABF345700129BA3 /* ShitViewController.swift */,
+				48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */,
+				48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		648E98282ABEB14900BCB09F = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +115,7 @@
 			children = (
 				648E98342ABEB14900BCB09F /* AppDelegate.swift */,
 				648E98362ABEB14900BCB09F /* SceneDelegate.swift */,
-				648E98382ABEB14900BCB09F /* ViewController.swift */,
+				48D2C65C2ABF35D500129BA3 /* ViewController */,
 				648E983A2ABEB14900BCB09F /* Main.storyboard */,
 				648E983D2ABEB14B00BCB09F /* Assets.xcassets */,
 				648E983F2ABEB14B00BCB09F /* LaunchScreen.storyboard */,
@@ -258,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				648E98392ABEB14900BCB09F /* ViewController.swift in Sources */,
+				48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */,
+				48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */,
 				648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */,
+				48D2C65B2ABF345700129BA3 /* ShitViewController.swift in Sources */,
 				648E98372ABEB14900BCB09F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

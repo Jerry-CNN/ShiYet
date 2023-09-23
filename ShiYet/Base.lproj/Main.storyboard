@@ -12,10 +12,21 @@
         <!--Item-->
         <scene sceneID="ero-ke-pd6">
             <objects>
-                <viewController id="3H8-rZ-uQs" sceneMemberID="viewController">
+                <viewController id="3H8-rZ-uQs" customClass="HisStatViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tnd-ZI-EeW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9e-E4-UoB">
+                                <rect key="frame" x="108" y="321" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="3H8-rZ-uQs" eventType="touchUpInside" id="Uxj-qo-fMk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="C8f-Zv-2ZV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -28,7 +39,7 @@
         <!--Item 2-->
         <scene sceneID="SMm-U0-W4c">
             <objects>
-                <viewController id="mBg-sl-yXc" sceneMemberID="viewController">
+                <viewController id="mBg-sl-yXc" customClass="CalendarViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GLV-sm-P8R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +50,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
+                                    <action selector="TestShitting:" destination="8pd-dh-7fc" eventType="touchUpInside" id="xIo-Yy-f8j"/>
                                     <action selector="test2:" destination="8pd-dh-7fc" eventType="touchUpInside" id="GCp-7B-Q5Z"/>
+                                    <action selector="test:" destination="mBg-sl-yXc" eventType="touchUpInside" id="x33-t7-t1x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,18 +69,28 @@
         <!--Item 1-->
         <scene sceneID="dXQ-QX-5Cn">
             <objects>
-                <viewController id="msM-xc-Orj" sceneMemberID="viewController">
+                <viewController id="msM-xc-Orj" customClass="ShitViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1GK-aM-HL3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-YL-UBV">
-                                <rect key="frame" x="126" y="457" width="75" height="35"/>
+                                <rect key="frame" x="126" y="111" width="75" height="381"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Button"/>
                                 <connections>
-                                    <action selector="test:" destination="daa-OL-V8T" eventType="touchUpInside" id="sSN-8Z-jxs"/>
+                                    <action selector="test:" destination="daa-OL-V8T" eventType="touchUpInside" id="cBx-y4-QFB"/>
+                                    <action selector="test:" destination="msM-xc-Orj" eventType="touchUpInside" id="elZ-Qx-Rxd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-r9-rTQ">
+                                <rect key="frame" x="192" y="673" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="test2:" destination="msM-xc-Orj" eventType="touchUpInside" id="Pxm-Nd-cyX"/>
                                 </connections>
                             </button>
                         </subviews>
