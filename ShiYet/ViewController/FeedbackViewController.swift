@@ -6,6 +6,22 @@ class FeedbackViewController: UIViewController {
     @IBAction func Quit(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    var submitted = false;
+    
+    @IBAction func submit(_ sender: Any) {
+            if !submitted {
+                let reportVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+
+                // Present the FeedbackViewController
+                self.present(reportVC, animated: true, completion: nil)
+                submitted = true
+                (sender as AnyObject).setTitle("Quit", for: .normal)
+            }
+            else {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
     
     var shapeRadioButtons: [UIButton] = []
     var colorRadioButtons: [UIButton] = []
