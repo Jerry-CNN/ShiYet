@@ -14,7 +14,6 @@ class  ShitViewController: UIViewController{
         
     }
     
-
     @IBAction func StartShitting(_ sender: Any) {
         if isShitting {
             print("End Shitting")
@@ -22,6 +21,7 @@ class  ShitViewController: UIViewController{
                 endShitting()
             (sender as AnyObject).setTitle("Start Shitting", for: .normal)
             } else {
+                dm.createTable()
                 dm.deleteAll() // Need to delete
                 print("Start Shitting")
                 // Start shitting
