@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "SQLite.swift",
-        "repositoryURL": "https://github.com/stephencelis/SQLite.swift",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
         "state": {
           "branch": null,
           "revision": "7a2e3cd27de56f6d396e84f63beefd0267b55ccb",
