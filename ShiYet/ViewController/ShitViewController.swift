@@ -24,5 +24,8 @@ class ShitViewController: UIViewController {
     @IBAction func test2(_ sender: Any) {
         view.backgroundColor = .white
     }
+    
+
+
 }
 
