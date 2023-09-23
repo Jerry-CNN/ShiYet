@@ -12,6 +12,7 @@ class DatabaseManager {
     static let shared = DatabaseManager()
     private let db: Connection
 
+
     private let shit_record = Table("shit_record")
     private let start_time = Expression<Date>("start_time")
     private let end_time = Expression<Date>("end_time")
@@ -59,7 +60,7 @@ class DatabaseManager {
     // Insert a new user into the database.
     func insertShit(start_time: Date) {
         do {
-            let insert = shit_record.insert(self.start_time <- start_time)
+            let insert = shit_record.insert(self.start_time <- start_time, self.end_time <- start_time, self.shape <- "", self.color <- "", self.smell <- "", self.sticky <- false, self.blood <- false, self.amount <- "", self.feeling <- "")
             try db.run(insert)
             print("Single shit record inserted successfully.")
         } catch {
@@ -67,23 +68,39 @@ class DatabaseManager {
         }
     }
 
-    // Query all users from the database.
-//    func getAllShit() -> [String] {
-//        var userList: [String] = []
-//
-//        do {
-//            for user in try db.prepare(shit_record) {
-//                userList.append(user[username])
-//            }
-//        } catch {
-//            print("Error querying users: \(error)")
-//        }
-//
-//        return userList
-//    }
+//     Query all users from the database.
+    func getAllShit() {
 
-    // Update a user's username by ID.
-    func updateUser(start_time: Date, new_end_time: Date, new_shape: String, new_color: String, new_smell: String, new_sticky: Bool, new_blood: Bool, new_amount: String, new_feeling: String) {
+        do {
+            for shit in try db.prepare(shit_record) {
+                let output = """
+                    Start Date: \(shit[start_time]),
+                    End Date: \(shit[end_time]),
+                    Shape: \(shit[shape]),
+                    Color: \(shit[color]),
+                    Sticky: \(shit[sticky]),
+                    Blood: \(shit[blood]),
+                    Amount: \(shit[amount]),
+                    Feeling: \(shit[feeling])
+                    ----------------------------------------
+                    """
+                print(output)
+            }
+        } catch {
+            print("Error querying shit record: \(error)")
+        }
+    }
+
+    // Update a shit record entirely with user's input.
+    func updateRecord(start_time: Date,
+                    new_end_time: Date,
+                    new_shape: String,
+                    new_color: String,
+                    new_smell: String,
+                    new_sticky: Bool,
+                    new_blood: Bool,
+                    new_amount: String,
+                    new_feeling: String) {
         let userToUpdate = shit_record.filter(self.start_time == start_time)
         do {
             let update = userToUpdate.update(end_time <- new_end_time, shape <- new_shape, smell <- new_smell, sticky <- new_sticky, color <- new_color, blood <- new_blood, amount <- new_amount, feeling <- new_feeling)
@@ -93,21 +110,29 @@ class DatabaseManager {
             print("Error updating shit record: \(error)")
         }
     }
+    
+    // Update a user's username by ID.
+    func updateEndTime(start_time: Date,
+                    new_end_time: Date) {
+        let userToUpdate = shit_record.filter(self.start_time == start_time)
+        do {
+            let update = userToUpdate.update(end_time <- new_end_time)
+            try db.run(update)
+            print("Single shit end time updated successfully.")
+        } catch {
+            print("Error updating shit record: \(error)")
+        }
+    }
 
-    // Delete a user by ID.
-//    func deleteUser(id: Int) {
-//        let userToDelete = shit_record.filter(self.id == id)
-//
-//        do {
-//            try db.run(userToDelete.delete())
-//            print("User deleted successfully.")
-//        } catch {
-//            print("Error deleting user: \(error)")
-//        }
-//    }
+    //  Delete all shit records.
+    func deleteAll() {
+        do {
+            let deleteAll = shit_record.delete()
+            try db.run(deleteAll)
+            print("All entries deleted successfully.")
+        } catch {
+            print("Error deleting entries: \(error)")
+        }
+    }
 
-    // Close the database connection when done.
-//    func closeDatabase() {
-//        db.close()
-//    }
 }

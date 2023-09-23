@@ -1,10 +1,3 @@
-//
-//  ShitViewController.swift
-//  ShiYet
-//
-//  Created by 江昊 on 9/23/23.
-//
-
 import Foundation
 
 import UIKit
@@ -14,6 +7,8 @@ class  ShitViewController: UIViewController{
     var timer: Timer?
     var startTime: Date?
     var isShitting = false
+    let dm = DatabaseManager.shared
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +17,14 @@ class  ShitViewController: UIViewController{
     
 
     @IBAction func StartShitting(_ sender: Any) {
-        print("test")
         if isShitting {
+            print("End Shitting")
                 // End shitting
                 endShitting()
             (sender as AnyObject).setTitle("Start Shitting", for: .normal)
             } else {
+                dm.deleteAll() // Need to delete
+                print("Start Shitting")
                 // Start shitting
                 startShitting()
                 (sender as AnyObject).setTitle("End Shitting", for: .normal)
@@ -50,6 +47,11 @@ class  ShitViewController: UIViewController{
         
         // Set the shitting flag
         isShitting = true
+        
+        // Create a new entry in shit record
+        dm.insertShit(start_time: startTime!)
+        dm.getAllShit()
+        
     }
 
     func endShitting() {
@@ -61,6 +63,10 @@ class  ShitViewController: UIViewController{
         if let startTime = startTime {
             let endTime = Date()
             let elapsedTime = endTime.timeIntervalSince(startTime)
+            
+            // Update end time of existing entry
+            dm.updateEndTime(start_time: startTime, new_end_time: endTime)
+            dm.getAllShit()
 
             // You can store the elapsed time or use it as needed
             print("Elapsed Time: \(elapsedTime) seconds")
@@ -75,8 +81,6 @@ class  ShitViewController: UIViewController{
         // Reset the shitting flag
         isShitting = false
     }
-
-
 
     
     @objc func updateTimer() {
@@ -97,4 +101,3 @@ class  ShitViewController: UIViewController{
 
 
 }
-
