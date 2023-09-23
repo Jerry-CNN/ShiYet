@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbS-Ex-8SB">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbS-Ex-8SB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
             <objects>
                 <viewController id="3H8-rZ-uQs" customClass="HisStatViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tnd-ZI-EeW">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9e-E4-UoB">
@@ -38,9 +39,9 @@
         <!--Calendar View Controller-->
         <scene sceneID="SMm-U0-W4c">
             <objects>
-                <viewController id="mBg-sl-yXc" customClass="CalendarViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShitViewController" id="mBg-sl-yXc" customClass="CalendarViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GLV-sm-P8R">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-IG-lE4">
@@ -70,7 +71,7 @@
             <objects>
                 <viewController id="msM-xc-Orj" userLabel="Shitting View Controller" customClass="ShitViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1GK-aM-HL3">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-85-JUx">
@@ -122,30 +123,56 @@
             <point key="canvasLocation" x="-152" y="0.0"/>
         </scene>
         <!--Feedback View Controller-->
-        <scene sceneID="5cQ-Do-RS9">
+        <scene sceneID="ANx-lR-ZSK">
             <objects>
-                <viewController storyboardIdentifier="FeedbackViewController" id="pUc-Ga-RkA" customClass="FeedbackViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="center" id="qGJ-mb-e74">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                <viewController storyboardIdentifier="FeedbackViewController" id="FSb-bw-WY6" customClass="FeedbackViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ihw-d8-pXh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS0-DE-ExZ">
-                                <rect key="frame" x="20" y="781" width="374" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgr-Aa-Y0J">
+                                <rect key="frame" x="227" y="387" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Go Back"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
-                                    <action selector="Quit:" destination="pUc-Ga-RkA" eventType="touchUpInside" id="A1R-L9-zbk"/>
+                                    <action selector="submit:" destination="FSb-bw-WY6" eventType="touchUpInside" id="YP6-V9-QEu"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="03h-Nl-o4Y"/>
+                        <viewLayoutGuide key="safeArea" id="XS3-zr-0eA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gDq-o4-az6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQ6-UA-X1N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462.1495327102803" y="760.69114470842339"/>
+            <point key="canvasLocation" x="1469.5652173913045" y="760.71428571428567"/>
+        </scene>
+        <!--Report View Controller-->
+        <scene sceneID="nHD-bA-EAg">
+            <objects>
+                <viewController storyboardIdentifier="ReportViewController" id="9sU-5h-3Ir" customClass="ReportViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L57-0V-eh1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVr-2q-0n9">
+                                <rect key="frame" x="13" y="392" width="401" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="Back:" destination="9sU-5h-3Ir" eventType="touchUpInside" id="lb7-TF-sZU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ip2-Nv-fqo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6J-VH-d9A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2321.739130434783" y="760.71428571428567"/>
         </scene>
     </scenes>
     <resources>
@@ -153,7 +180,7 @@
         <image name="analytics" width="32" height="32"/>
         <image name="calendar" width="32" height="32"/>
         <image name="calendar (2)" width="32" height="32"/>
-        <image name="poop" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="poop" width="32" height="32"/>
         <image name="poop (3)" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -9,17 +9,17 @@ import Foundation
 
 import UIKit
 
-class ShitViewController: UIViewController {
+class  ShitViewController: UIViewController{
     
     var timer: Timer?
     var startTime: Date?
     var isShitting = false
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
+    
 
     @IBAction func StartShitting(_ sender: Any) {
         print("test")
@@ -70,11 +70,12 @@ class ShitViewController: UIViewController {
         let feedbackVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
 
         // Present the FeedbackViewController
-        present(feedbackVC, animated: true, completion: nil)
+        self.present(feedbackVC, animated: true, completion: nil)
 
         // Reset the shitting flag
         isShitting = false
     }
+
 
 
     
