@@ -19,6 +19,7 @@
 		648E984C2ABEB14B00BCB09F /* ShiYetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E984B2ABEB14B00BCB09F /* ShiYetTests.swift */; };
 		648E98562ABEB14B00BCB09F /* ShiYetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98552ABEB14B00BCB09F /* ShiYetUITests.swift */; };
 		648E98582ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98572ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift */; };
+		F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		648E98512ABEB14B00BCB09F /* ShiYetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShiYetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		648E98552ABEB14B00BCB09F /* ShiYetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYetUITests.swift; sourceTree = "<group>"; };
 		648E98572ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				648E983D2ABEB14B00BCB09F /* Assets.xcassets */,
 				648E983F2ABEB14B00BCB09F /* LaunchScreen.storyboard */,
 				648E98422ABEB14B00BCB09F /* Info.plist */,
+				F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */,
 			);
 			path = ShiYet;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */,
 				48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */,
 				48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */,
 				48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */,
