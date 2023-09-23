@@ -3,10 +3,22 @@ import Foundation
 import UIKit
 
 class FeedbackViewController: UIViewController {
+    
+    // Static function for create a vc from storyboard with parameters
+    static func makeFeedbackVC(current_time: Date) -> FeedbackViewController {
+            let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+            
+            newViewController.current_time = current_time
+            
+            return newViewController
+        }
+    
     @IBAction func Quit(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    var submitted = false;
+    
+    var current_time: Date? = nil
+    var submitted = false
     
     @IBAction func submit(_ sender: Any) {
             if !submitted {
@@ -375,5 +387,64 @@ class FeedbackViewController: UIViewController {
             timeLabel.topAnchor.constraint(equalTo: stickyRadio.bottomAnchor,constant: 20)
         ])
     }
+    
+    // Fetch user's choices
+    func getListOfStrings() -> [Any] {
+        var shape: String = ""
+        var color: String = ""
+        var amount: String = ""
+        var feel: String = ""
+        var smell: String = ""
+        var blood: Bool = false
+        var sticky: Bool = false
+        
+        for button in shapeRadioButtons {
+            if button.isSelected {
+                shape = button.currentTitle!
+            }
+        }
+        
+        for button in colorRadioButtons {
+            if button.isSelected {
+                color = button.currentTitle!
+            }
+        }
+        
+        for button in amountRadioButtons {
+            if button.isSelected {
+                amount = button.currentTitle!
+            }
+        }
+        
+        for button in feelRadioButtons {
+            if button.isSelected {
+                feel = button.currentTitle!
+            }
+        }
+        
+        for button in smellRadioButtons {
+            if button.isSelected {
+                smell = button.currentTitle!
+            }
+        }
+        
+        for button in stickyRadioButtons {
+            if button.isSelected {
+                sticky = true
+            }
+        }
+        
+        for button in bloodRadioButtons {
+            if button.isSelected {
+                blood = true
+            }
+        }
+        
+        return [shape, color, amount, feel, smell, sticky, blood]
+    }
+    
+    
+    
 }
+
 
