@@ -15,5 +15,13 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func test(_ sender: UIButton) {
+        print("Button tapped") // This message will appear in the Xcode console.
+        view.backgroundColor = .black
+    }
+    @IBAction func test2(_ sender: Any) {
+        print("Button tapped") // This message will appear in the Xcode console.
+        view.backgroundColor = .black
+    }
 }
 
