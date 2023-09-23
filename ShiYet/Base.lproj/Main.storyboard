@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbS-Ex-8SB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbS-Ex-8SB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="-152" y="761"/>
         </scene>
-        <!--Item 1-->
+        <!--Shitting View Controller-->
         <scene sceneID="dXQ-QX-5Cn">
             <objects>
-                <viewController id="msM-xc-Orj" customClass="ShitViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="msM-xc-Orj" userLabel="Shitting View Controller" customClass="ShitViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1GK-aM-HL3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +81,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Start Shitting"/>
                                 <connections>
                                     <action selector="StartShitting:" destination="msM-xc-Orj" eventType="touchUpInside" id="TTu-OW-84g"/>
-                                    <segue destination="c6e-dD-G1t" kind="show" identifier="FeedbackSegue" id="I7S-b1-PFT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypy-ok-f0g">
@@ -101,35 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIv-ir-5Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="761"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bEe-qg-UFU">
-            <objects>
-                <viewController id="c6e-dD-G1t" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tjE-lY-SAc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3T-ee-5Y9">
-                                <rect key="frame" x="156" y="112" width="53" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="quit"/>
-                                <connections>
-                                    <action selector="Quit:" destination="KKy-II-GHu" eventType="touchUpInside" id="elX-1U-CRV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Nps-fB-MMa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Sbm-d6-CH5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pc4-fO-eYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="KKy-II-GHu" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1423" y="761"/>
+            <point key="canvasLocation" x="680" y="761"/>
         </scene>
         <!--FirstScreen-->
         <scene sceneID="TAU-Gn-yHL">
@@ -149,6 +121,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UU1-FY-Nhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-152" y="0.0"/>
+        </scene>
+        <!--Feedback View Controller-->
+        <scene sceneID="5cQ-Do-RS9">
+            <objects>
+                <viewController storyboardIdentifier="FeedbackViewController" id="pUc-Ga-RkA" customClass="FeedbackViewController" customModule="ShiYet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="center" id="qGJ-mb-e74">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS0-DE-ExZ">
+                                <rect key="frame" x="20" y="781" width="374" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go Back"/>
+                                <connections>
+                                    <action selector="Quit:" destination="pUc-Ga-RkA" eventType="touchUpInside" id="A1R-L9-zbk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="03h-Nl-o4Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDq-o4-az6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462.3188405797102" y="760.71428571428567"/>
         </scene>
     </scenes>
     <resources>

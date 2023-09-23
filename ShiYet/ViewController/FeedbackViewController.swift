@@ -10,5 +10,6 @@ class FeedbackViewController: UIViewController {
     }
 
     @IBAction func Quit(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

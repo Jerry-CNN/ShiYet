@@ -57,9 +57,6 @@ class ShitViewController: UIViewController {
         timer?.invalidate()
         timer = nil
 
-        // Hide the elapsed time label
-        //elapsedTimeLabel.isHidden = true
-
         // Calculate the elapsed time
         if let startTime = startTime {
             let endTime = Date()
@@ -69,12 +66,16 @@ class ShitViewController: UIViewController {
             print("Elapsed Time: \(elapsedTime) seconds")
         }
 
+        // Create an instance of FeedbackViewController
+        let feedbackVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+
+        // Present the FeedbackViewController
+        present(feedbackVC, animated: true, completion: nil)
+
         // Reset the shitting flag
         isShitting = false
-
-        // Perform the segue to the "Quit" page
-        performSegue(withIdentifier: "FeedbackSegue", sender: self)
     }
+
 
     
     @objc func updateTimer() {

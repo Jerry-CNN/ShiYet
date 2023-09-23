@@ -11,6 +11,7 @@
 		48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */; };
 		48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */; };
 		48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C6612ABF445200129BA3 /* FeedbackViewController.swift */; };
+		48D2C6652ABF549900129BA3 /* radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C6642ABF549900129BA3 /* radiobutton.swift */; };
 		648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98342ABEB14900BCB09F /* AppDelegate.swift */; };
 		648E98372ABEB14900BCB09F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98362ABEB14900BCB09F /* SceneDelegate.swift */; };
 		648E983C2ABEB14900BCB09F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648E983A2ABEB14900BCB09F /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisStatViewController.swift; sourceTree = "<group>"; };
 		48D2C6612ABF445200129BA3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		48D2C6642ABF549900129BA3 /* radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radiobutton.swift; sourceTree = "<group>"; };
 		648E98312ABEB14900BCB09F /* ShiYet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiYet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		648E98342ABEB14900BCB09F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		648E98362ABEB14900BCB09F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		48D2C6632ABF546E00129BA3 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				48D2C6642ABF549900129BA3 /* radiobutton.swift */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
 		648E98282ABEB14900BCB09F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		648E98332ABEB14900BCB09F /* ShiYet */ = {
 			isa = PBXGroup;
 			children = (
+				48D2C6632ABF546E00129BA3 /* buttons */,
 				648E98342ABEB14900BCB09F /* AppDelegate.swift */,
 				648E98362ABEB14900BCB09F /* SceneDelegate.swift */,
 				48D2C65C2ABF35D500129BA3 /* ViewController */,
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */,
+				48D2C6652ABF549900129BA3 /* radiobutton.swift in Sources */,
 				48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */,
 				48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */,
 				648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */,
