@@ -143,5 +143,22 @@ class DatabaseManager {
     func getDb() -> Connection{
         return db;
     }
+    
+    func getDateRecord(startdate:Date) -> Table {
+        let dtFormatter = DateFormatter()
+        dtFormatter.locale = Locale(identifier: "en_GB")
+        dtFormatter.setLocalizedDateFormatFromTemplate("dd-MM-yyyy")
+        let formattedDateTime = dtFormatter.string(from: startdate)
+        
+        let dtFormatter2 = DateFormatter()
+        dtFormatter2.dateFormat = "dd-MM-yyyy HH:mm:ss"
+
+        var endDateStr = formattedDateTime + " 23:59:59"
+        var startDateStr = formattedDateTime + " 00:00:00"
+        let startDate = dtFormatter2.date(from: startDateStr)
+        let endDate = dtFormatter2.date(from: endDateStr)!
+        let rec = shit_record.filter(self.start_time <= endDate && self.start_time >= startdate)
+        return rec
+    }
 
 }

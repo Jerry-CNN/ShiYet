@@ -5,9 +5,13 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBOutlet weak var picker: UIDatePicker!
+    
+    @IBAction func submitDate(_ sender: UIButton) {
+        let selectedDate = picker.date
+        let dateSearchVC = DateSearchViewController.makeDateSearchVC(current_time: selectedDate)
 
-    @IBAction func DateSelected(_ sender: Any) {
-        
+        self.present(dateSearchVC, animated: true, completion: nil)
     }
     
 }
