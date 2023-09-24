@@ -40,6 +40,7 @@ class ReportViewController: UIViewController {
         
         // Generating analysis
         output.append(contentsOf: at.shape_advice[data[0] as! String]!)
+        output.append("\n")
         output.append(contentsOf: at.color_advice[data[1] as! String]!)
         output.append(contentsOf: at.amount_advice[data[2] as! String]!)
         output.append(contentsOf: at.feeling_advice[data[3] as! String]!)

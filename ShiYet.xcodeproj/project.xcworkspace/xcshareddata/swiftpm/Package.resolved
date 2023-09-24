@@ -3,10 +3,10 @@
     {
       "identity" : "charts",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/danielgindi/Charts",
+      "location" : "https://github.com/danielgindi/Charts.git",
       "state" : {
-        "revision" : "0a229f8c914b0ec93798cee058cf75b339297513",
-        "version" : "5.0.0"
+        "branch" : "master",
+        "revision" : "e516b04834b6e2072367f1366750c01c164e6545"
       }
     },
     {
