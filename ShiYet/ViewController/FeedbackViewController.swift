@@ -35,6 +35,7 @@ class FeedbackViewController: UIViewController {
     var submitted = false
     let dm = DatabaseManager.shared
     
+    
     @IBAction func submit(_ sender: Any) {
             if !submitted {
                 dm.updateRecord(start_time: current_time!, new_shape: selectedShapetag, new_color: selectedColortag, new_smell: selectedSmelltag, new_sticky: selectedStickytag, new_blood: selectedBloodtag, new_amount: selectedAmounttag, new_feeling: selectedFeeltag)

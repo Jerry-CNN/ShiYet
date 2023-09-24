@@ -139,5 +139,9 @@ class DatabaseManager {
         let userToUpdate = shit_record.filter(self.start_time == start_time)
         return userToUpdate
     }
+    
+    func getDb() -> Connection{
+        return db;
+    }
 
 }

@@ -29,22 +29,33 @@ class ReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
+        let db: Connection = dm.getDb()
 
         // Add content to contentView (this can be any subviews you want)
         let contentLabel = UILabel()
         let curRecord = dm.getRecord(start_time: current_time!)
-        let output = """
-            Start Date: \(curRecord[start_time]),
-            End Date: \(curRecord[end_time]),
-            Shape: \(curRecord[shape]),
-            Color: \(curRecord[color]),
-            Sticky: \(curRecord[sticky]),
-            Blood: \(curRecord[blood]),
-            Amount: \(curRecord[amount]),
-            Feeling: \(curRecord[feeling])
-            ----------------------------------------
-            """
-        print(curRecord.select(start_time))
+        var output:String = ""
+        do{
+            for record in try db.prepare(curRecord) {
+                do {
+                    output = """
+                        Start Date: \(try record.get(start_time)),
+                        End Date: \(try record.get(end_time)),
+                        Shape: \(try record.get(shape)),
+                        Color: \(try record.get(color)),
+                        Sticky: \(try record.get(sticky)),
+                        Blood: \(try record.get(blood)),
+                        Amount: \(try record.get(amount)),
+                        Feeling: \(try record.get(feeling))
+                        ----------------------------------------
+                        """
+                } catch {
+                    print("Error entries: \(error)")
+                }
+            }
+        } catch {
+            print("Error entries: \(error)")
+        }
         contentLabel.text = output
         contentLabel.numberOfLines = 0 // Allow multiple lines of text
         contentView.addSubview(contentLabel)
