@@ -135,13 +135,45 @@ class DatabaseManager {
         }
     }
     
-    func getRecord(start_time: Date) -> Table {
-        let userToUpdate = shit_record.filter(self.start_time == start_time)
-        return userToUpdate
-    }
+//    func getRecord(start_time: Date) -> Table {
+//        let userToUpdate = shit_record.filter(self.start_time == start_time)
+//        return userToUpdate
+//    }
     
-    func getDb() -> Connection{
-        return db;
+//    func getDb() -> Connection{
+//        return db;
+//    }
+    func getRow(start_time: Date) -> [Any] {
+        var result = [Any]()
+        let shit = shit_record.filter(self.start_time == start_time)
+
+        do {
+            if let row = try db.pluck(shit) {
+                // Access the row's columns
+                result.append(row[self.shape])
+                result.append(row[self.color])
+                result.append(row[self.amount])
+                result.append(row[self.feeling])
+                result.append(row[self.smell])
+                result.append(row[self.blood])
+                result.append(row[self.sticky])
+                let seconds = row[self.end_time].timeIntervalSince(row[self.start_time])
+                if seconds <= 180 {
+                    result.append(1)
+                } else if seconds <= 300 {
+                    result.append(2)
+                } else {
+                    result.append(3)
+                }
+            } else {
+                // The row with the specified primary key does not exist
+                print("Row not found")
+            }
+        } catch {
+            // Handle any errors that may occur during the retrieval process
+            print("Error: \(error)")
+        }
+        return result
     }
 
 }
