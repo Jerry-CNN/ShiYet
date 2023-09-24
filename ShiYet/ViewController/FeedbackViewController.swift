@@ -1,9 +1,23 @@
 import Foundation
 
 import UIKit
+import ObjectiveC // Import the Objective-C runtime
+
+// Create a key for the associated object (typically, you'd use a unique address)
+private var associatedDataKey: UInt8 = 0
+
+extension UIButton {
+    var associatedData: Any? {
+        get {
+            return objc_getAssociatedObject(self, &associatedDataKey) as Any?
+        }
+        set {
+            objc_setAssociatedObject(self, &associatedDataKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+}
 
 class FeedbackViewController: UIViewController {
-    
     // Static function for create a vc from storyboard with parameters
     static func makeFeedbackVC(current_time: Date) -> FeedbackViewController {
             let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
@@ -23,6 +37,7 @@ class FeedbackViewController: UIViewController {
     
     @IBAction func submit(_ sender: Any) {
             if !submitted {
+                dm.updateRecord(start_time: current_time!, new_shape: selectedShapetag, new_color: selectedColortag, new_smell: selectedSmelltag, new_sticky: selectedStickytag, new_blood: selectedBloodtag, new_amount: selectedAmounttag, new_feeling: selectedFeeltag)
                 let reportVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
 
                 // Present the FeedbackViewController
@@ -44,11 +59,21 @@ class FeedbackViewController: UIViewController {
     var bloodRadioButtons: [UIButton] = []
     var stickyRadioButtons: [UIButton] = []
     
+    var selectedShapetag: String = ""
+    var selectedColortag: String = ""
+    var selectedAmounttag: String = ""
+    var selectedFeeltag: String = ""
+    var selectedSmelltag: String = ""
+    var selectedBloodtag: Bool = true
+    var selectedStickytag: Bool = true
+    
     @IBAction func radioButtonSet1Tapped(_ sender: UIButton) {
         for button in shapeRadioButtons {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                selectedShapetag = button.associatedData as! String
+                print(selectedShapetag)
             } else {
                 button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
             }
@@ -60,6 +85,8 @@ class FeedbackViewController: UIViewController {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                selectedColortag = button.associatedData as! String
+                print(selectedColortag)
             } else {
                 button.backgroundColor = UIColor.white
             }
@@ -71,6 +98,8 @@ class FeedbackViewController: UIViewController {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                selectedAmounttag = button.associatedData as! String
+                print(selectedAmounttag)
             } else {
                 button.backgroundColor = UIColor.white
             }
@@ -81,6 +110,8 @@ class FeedbackViewController: UIViewController {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                selectedFeeltag = button.associatedData as! String
+                print(selectedFeeltag)
             } else {
                 button.backgroundColor = UIColor.white
             }
@@ -92,6 +123,8 @@ class FeedbackViewController: UIViewController {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                selectedSmelltag = button.associatedData as! String
+                print(selectedSmelltag)
             } else {
                 button.backgroundColor = UIColor.white
             }
@@ -103,6 +136,13 @@ class FeedbackViewController: UIViewController {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                let text = button.associatedData as! String
+                if text == "blood" {
+                    selectedBloodtag = true
+                }else {
+                    selectedBloodtag = false
+                }
+                print(selectedBloodtag)
             } else {
                 button.backgroundColor = UIColor.white
             }
@@ -114,6 +154,13 @@ class FeedbackViewController: UIViewController {
             button.isSelected = (button == sender)
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
+                let text = button.associatedData as! String
+                if text == "sticky" {
+                    selectedStickytag = true
+                }else{
+                    selectedStickytag = false
+                }
+                print(selectedStickytag)
             } else {
                 button.backgroundColor = UIColor.white
             }
@@ -139,6 +186,7 @@ class FeedbackViewController: UIViewController {
             let button = UIButton()
             button.addTarget(self, action: #selector(radioButtonSet1Tapped(_:)), for: .touchUpInside)
             button.setBackgroundImage(UIImage(named:shapeIcon[i]), for: .normal)
+            button.associatedData = shapeIcon[i]
             stack.addArrangedSubview(button)
         }
         return stack
@@ -163,6 +211,7 @@ class FeedbackViewController: UIViewController {
             button.addTarget(self, action: #selector(radioButtonSet2Tapped(_:)), for: .touchUpInside)
             button.imageView?.contentMode = .scaleAspectFit
             button.setBackgroundImage(UIImage(named: colorIcon[i]), for: .normal)
+            button.associatedData = colorIcon[i]
             stack.addArrangedSubview(button)
         }
         return stack
@@ -187,6 +236,7 @@ class FeedbackViewController: UIViewController {
             let button = UIButton()
             button.setTitle(amountIcon[i], for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet3Tapped(_:)), for: .touchUpInside)
+            button.associatedData = amountIcon[i]
             stack.addArrangedSubview(button)
         }
         return stack
@@ -211,6 +261,7 @@ class FeedbackViewController: UIViewController {
             let button = UIButton()
             button.setTitle(feelIcon[i], for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet4Tapped(_:)), for: .touchUpInside)
+            button.associatedData = feelIcon[i]
             stack.addArrangedSubview(button)
         }
         return stack
@@ -235,6 +286,7 @@ class FeedbackViewController: UIViewController {
             let button = UIButton()
             button.addTarget(self, action: #selector(radioButtonSet5Tapped(_:)), for: .touchUpInside)
             button.setBackgroundImage(UIImage(named: smellIcon[i]), for: .normal)
+            button.associatedData = smellIcon[i]
             stack.addArrangedSubview(button)
         }
         return stack
@@ -259,6 +311,7 @@ class FeedbackViewController: UIViewController {
             let button = UIButton()
             button.addTarget(self, action: #selector(radioButtonSet6Tapped(_:)), for: .touchUpInside)
             button.setTitle(blooda[i], for: .normal)
+            button.associatedData = blooda[i]
             stack.addArrangedSubview(button)
         }
         return stack
@@ -273,7 +326,7 @@ class FeedbackViewController: UIViewController {
     
     let stickyRadio: UIStackView = {
         let stack = UIStackView()
-        let blooda :[String] = ["sticky","not sticky"]
+        let sticky :[String] = ["sticky","not sticky"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
@@ -281,20 +334,13 @@ class FeedbackViewController: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         for i in 0...1{
             let button = UIButton()
-            button.setTitle(blooda[i], for: .normal)
+            button.setTitle(sticky[i], for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet7Tapped(_:)), for: .touchUpInside)
+            button.associatedData = sticky[i]
             stack.addArrangedSubview(button)
         }
         return stack
     }()
-    
-    let timeLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Time: "
-        label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -313,7 +359,6 @@ class FeedbackViewController: UIViewController {
         view.addSubview(bloodRadio)
         view.addSubview(stickyLabel)
         view.addSubview(stickyRadio)
-        view.addSubview(timeLabel)
         
         for subview in shapeRadio.arrangedSubviews{
             if let button = subview as? UIButton {
@@ -393,7 +438,6 @@ class FeedbackViewController: UIViewController {
             stickyRadio.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stickyRadio.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stickyRadio.topAnchor.constraint(equalTo: stickyLabel.bottomAnchor,constant: 20),
-            timeLabel.topAnchor.constraint(equalTo: stickyRadio.bottomAnchor,constant: 20)
         ])
     }
     
@@ -448,7 +492,6 @@ class FeedbackViewController: UIViewController {
                 blood = true
             }
         }
-        
         return [shape, color, amount, feel, smell, sticky, blood]
     }
     

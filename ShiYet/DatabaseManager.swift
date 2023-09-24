@@ -94,7 +94,6 @@ class DatabaseManager {
 
     // Update a shit record entirely with user's input.
     func updateRecord(start_time: Date,
-                    new_end_time: Date,
                     new_shape: String,
                     new_color: String,
                     new_smell: String,
@@ -104,7 +103,7 @@ class DatabaseManager {
                     new_feeling: String) {
         let userToUpdate = shit_record.filter(self.start_time == start_time)
         do {
-            let update = userToUpdate.update(end_time <- new_end_time, shape <- new_shape, smell <- new_smell, sticky <- new_sticky, color <- new_color, blood <- new_blood, amount <- new_amount, feeling <- new_feeling)
+            let update = userToUpdate.update(shape <- new_shape, smell <- new_smell, sticky <- new_sticky, color <- new_color, blood <- new_blood, amount <- new_amount, feeling <- new_feeling)
             try db.run(update)
             print("Single shit record updated successfully.")
         } catch {
