@@ -256,8 +256,8 @@ class FeedbackViewController: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         for i in 0...1{
             let button = UIButton()
+            button.addTarget(self, action: #selector(radioButtonSet6Tapped(_:)), for: .touchUpInside)
             button.setTitle(blooda[i], for: .normal)
-            button.setBackgroundImage(UIImage(named: blooda[i]), for: .normal)
             stack.addArrangedSubview(button)
         }
         return stack
@@ -451,6 +451,7 @@ class FeedbackViewController: UIViewController {
         return [shape, color, amount, feel, smell, sticky, blood]
     }
     
+
     
     
 }
