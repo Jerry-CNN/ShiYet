@@ -143,21 +143,57 @@ class DatabaseManager {
     func getDb() -> Connection{
         return db;
     }
+    func getRow(start_time: Date) -> [Any] {
+        var result = [Any]()
+        let shit = shit_record.filter(self.start_time == start_time)
+
+        do {
+            if let row = try db.pluck(shit) {
+                // Access the row's columns
+                result.append(row[self.shape])
+                result.append(row[self.color])
+                result.append(row[self.amount])
+                result.append(row[self.feeling])
+                result.append(row[self.smell])
+                result.append(row[self.blood])
+                result.append(row[self.sticky])
+                let seconds = row[self.end_time].timeIntervalSince(row[self.start_time])
+                if seconds <= 180 {
+                    result.append(1)
+                } else if seconds <= 300 {
+                    result.append(2)
+                } else {
+                    result.append(3)
+                }
+            } else {
+                // The row with the specified primary key does not exist
+                print("Row not found")
+            }
+        } catch {
+            // Handle any errors that may occur during the retrieval process
+            print("Error: \(error)")
+        }
+        return result
+    }
     
     func getDateRecord(startdate:Date) -> Table {
         let dtFormatter = DateFormatter()
+        dtFormatter.timeZone = TimeZone.current
         dtFormatter.locale = Locale(identifier: "en_GB")
         dtFormatter.setLocalizedDateFormatFromTemplate("dd-MM-yyyy")
         let formattedDateTime = dtFormatter.string(from: startdate)
         
         let dtFormatter2 = DateFormatter()
+        dtFormatter2.timeZone = TimeZone.current
         dtFormatter2.dateFormat = "dd-MM-yyyy HH:mm:ss"
 
         var endDateStr = formattedDateTime + " 23:59:59"
         var startDateStr = formattedDateTime + " 00:00:00"
         let startDate = dtFormatter2.date(from: startDateStr)
-        let endDate = dtFormatter2.date(from: endDateStr)!
-        let rec = shit_record.filter(self.start_time <= endDate && self.start_time >= startdate)
+        let endDate = dtFormatter2.date(from: endDateStr)
+        print(startDate)
+        print(endDate)
+        let rec = shit_record.filter(self.start_time <= endDate! && self.start_time >= startDate!)
         return rec
     }
 

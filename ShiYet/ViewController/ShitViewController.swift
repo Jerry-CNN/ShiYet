@@ -21,7 +21,7 @@ class ShitViewController: UIViewController{
             (sender as AnyObject).setTitle("Start Shitting", for: .normal)
             } else {
                 dm.createTable()
-                dm.deleteAll() // Need to delete
+//                dm.deleteAll() // Need to delete
                 print("Start Shitting")
                 // Start shitting
                 startShitting()
@@ -48,7 +48,7 @@ class ShitViewController: UIViewController{
         
         // Create a new entry in shit record
         dm.insertShit(start_time: startTime!)
-        dm.getAllShit()
+//        dm.getAllShit()
         
     }
 
@@ -64,7 +64,7 @@ class ShitViewController: UIViewController{
             
             // Update end time of existing entry
             dm.updateEndTime(start_time: startTime, new_end_time: endTime)
-            dm.getAllShit()
+//            dm.getAllShit()
 
             // You can store the elapsed time or use it as needed
             print("Elapsed Time: \(elapsedTime) seconds")

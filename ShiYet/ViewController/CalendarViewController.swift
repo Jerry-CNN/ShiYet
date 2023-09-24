@@ -10,7 +10,6 @@ class CalendarViewController: UIViewController {
     @IBAction func submitDate(_ sender: UIButton) {
         let selectedDate = picker.date
         let dateSearchVC = DateSearchViewController.makeDateSearchVC(current_time: selectedDate)
-
         self.present(dateSearchVC, animated: true, completion: nil)
     }
     

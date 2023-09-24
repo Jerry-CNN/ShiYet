@@ -25,6 +25,10 @@
 		648E98562ABEB14B00BCB09F /* ShiYetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98552ABEB14B00BCB09F /* ShiYetUITests.swift */; };
 		648E98582ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98572ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift */; };
 		F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */; };
+		F4D9C6702ABFFB0500538FDA /* AnalysisText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9C66F2ABFFB0500538FDA /* AnalysisText.swift */; };
+		F4D9C6762AC014EC00538FDA /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = F4D9C6752AC014EC00538FDA /* DGCharts */; };
+		F4D9C6792AC0151200538FDA /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = F4D9C6782AC0151200538FDA /* DGCharts */; };
+		F4D9C67B2AC0151200538FDA /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4D9C67A2AC0151200538FDA /* DGChartsDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,7 @@
 		648E98552ABEB14B00BCB09F /* ShiYetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYetUITests.swift; sourceTree = "<group>"; };
 		648E98572ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiYetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		F4D9C66F2ABFFB0500538FDA /* AnalysisText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D9C6792AC0151200538FDA /* DGCharts in Frameworks */,
 				48D2C6752ABF76F800129BA3 /* SQLite in Frameworks */,
+				F4D9C6762AC014EC00538FDA /* DGCharts in Frameworks */,
+				F4D9C67B2AC0151200538FDA /* DGChartsDynamic in Frameworks */,
 				4883C0DC2ABFC90E004EFD4B /* JTAppleCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +147,7 @@
 				648E983F2ABEB14B00BCB09F /* LaunchScreen.storyboard */,
 				648E98422ABEB14B00BCB09F /* Info.plist */,
 				F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */,
+				F4D9C66F2ABFFB0500538FDA /* AnalysisText.swift */,
 			);
 			path = ShiYet;
 			sourceTree = "<group>";
@@ -179,6 +188,9 @@
 			packageProductDependencies = (
 				48D2C6742ABF76F800129BA3 /* SQLite */,
 				4883C0DB2ABFC90E004EFD4B /* JTAppleCalendar */,
+				F4D9C6752AC014EC00538FDA /* DGCharts */,
+				F4D9C6782AC0151200538FDA /* DGCharts */,
+				F4D9C67A2AC0151200538FDA /* DGChartsDynamic */,
 			);
 			productName = ShiYet;
 			productReference = 648E98312ABEB14900BCB09F /* ShiYet.app */;
@@ -256,6 +268,11 @@
 				48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
 				4812CB612AC0048900C7213B /* XCRemoteSwiftPackageReference "Charts" */,
+				F4D9C6712AC0126A00538FDA /* XCRemoteSwiftPackageReference "Charts" */,
+				F4D9C6722AC014D500538FDA /* XCRemoteSwiftPackageReference "Charts" */,
+				F4D9C6732AC014E400538FDA /* XCRemoteSwiftPackageReference "Charts" */,
+				F4D9C6742AC014EC00538FDA /* XCRemoteSwiftPackageReference "Charts" */,
+				F4D9C6772AC0151200538FDA /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 648E98322ABEB14900BCB09F /* Products */;
 			projectDirPath = "";
@@ -307,6 +324,7 @@
 				48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */,
 				4883C0DE2ABFC9C5004EFD4B /* DateCell.swift in Sources */,
 				48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */,
+				F4D9C6702ABFFB0500538FDA /* AnalysisText.swift in Sources */,
 				648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */,
 				48D2C65B2ABF345700129BA3 /* ShitViewController.swift in Sources */,
 				648E98372ABEB14900BCB09F /* SceneDelegate.swift in Sources */,
@@ -679,6 +697,46 @@
 				minimumVersion = 0.14.1;
 			};
 		};
+		F4D9C6712AC0126A00538FDA /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F4D9C6722AC014D500538FDA /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F4D9C6732AC014E400538FDA /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F4D9C6742AC014EC00538FDA /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F4D9C6772AC0151200538FDA /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -691,6 +749,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
+		};
+		F4D9C6752AC014EC00538FDA /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4D9C6722AC014D500538FDA /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		F4D9C6782AC0151200538FDA /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4D9C6712AC0126A00538FDA /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		F4D9C67A2AC0151200538FDA /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4D9C6712AC0126A00538FDA /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

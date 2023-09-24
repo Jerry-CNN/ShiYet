@@ -10,9 +10,10 @@ struct ToyShape: Identifiable {
 }
 
 var data: [ToyShape] = [
-    .init(type: "Cube", count: 5),
-    .init(type: "Sphere", count: 4),
-    .init(type: "Pyramid", count: 4)
+    .init(type: "Brown", count: 4),
+    .init(type: "Red", count: 1),
+    .init(type: "Yellow", count: 1),
+    .init(type: "Black", count: 2)
 ]
 
 struct ChartView: View {
@@ -35,7 +36,9 @@ struct ChartView: View {
 
 class HisStatViewController: UIViewController {
 
+    
     @IBOutlet weak var ReportSection: UIScrollView!
+    
     let contentView = UIView()
 
     override func viewDidLoad() {
@@ -63,11 +66,12 @@ class HisStatViewController: UIViewController {
 
 
     func setupScrollView() {
+        
+        ReportSection.addSubview(contentView)
+        
         // Add ReportSection (UIScrollView) to the view controller's view
         view.addSubview(ReportSection)
 
-        // Add contentView to ReportSection (UIScrollView)
-        ReportSection.addSubview(contentView)
 
         // Enable vertical scrolling
         ReportSection.isScrollEnabled = true
