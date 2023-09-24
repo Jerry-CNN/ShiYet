@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4883C0DC2ABFC90E004EFD4B /* JTAppleCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 4883C0DB2ABFC90E004EFD4B /* JTAppleCalendar */; };
+		4883C0DE2ABFC9C5004EFD4B /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4883C0DD2ABFC9C5004EFD4B /* DateCell.swift */; };
 		48D2C65B2ABF345700129BA3 /* ShitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65A2ABF345700129BA3 /* ShitViewController.swift */; };
 		48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */; };
 		48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */; };
@@ -21,7 +23,6 @@
 		648E984C2ABEB14B00BCB09F /* ShiYetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E984B2ABEB14B00BCB09F /* ShiYetTests.swift */; };
 		648E98562ABEB14B00BCB09F /* ShiYetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98552ABEB14B00BCB09F /* ShiYetUITests.swift */; };
 		648E98582ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E98572ABEB14B00BCB09F /* ShiYetUITestsLaunchTests.swift */; };
-		648E98682ABF68CB00BCB09F /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 648E98672ABF68CB00BCB09F /* SQLite */; };
 		F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9C65A2ABF58CD00538FDA /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4883C0DD2ABFC9C5004EFD4B /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		48D2C65A2ABF345700129BA3 /* ShitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShitViewController.swift; sourceTree = "<group>"; };
 		48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisStatViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D2C6752ABF76F800129BA3 /* SQLite in Frameworks */,
+				4883C0DC2ABFC90E004EFD4B /* JTAppleCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +131,7 @@
 				648E98362ABEB14900BCB09F /* SceneDelegate.swift */,
 				48D2C65C2ABF35D500129BA3 /* ViewController */,
 				648E983A2ABEB14900BCB09F /* Main.storyboard */,
+				4883C0DD2ABFC9C5004EFD4B /* DateCell.swift */,
 				648E983D2ABEB14B00BCB09F /* Assets.xcassets */,
 				648E983F2ABEB14B00BCB09F /* LaunchScreen.storyboard */,
 				648E98422ABEB14B00BCB09F /* Info.plist */,
@@ -171,6 +175,7 @@
 			name = ShiYet;
 			packageProductDependencies = (
 				48D2C6742ABF76F800129BA3 /* SQLite */,
+				4883C0DB2ABFC90E004EFD4B /* JTAppleCalendar */,
 			);
 			productName = ShiYet;
 			productReference = 648E98312ABEB14900BCB09F /* ShiYet.app */;
@@ -246,6 +251,7 @@
 			mainGroup = 648E98282ABEB14900BCB09F;
 			packageReferences = (
 				48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
 			);
 			productRefGroup = 648E98322ABEB14900BCB09F /* Products */;
 			projectDirPath = "";
@@ -294,6 +300,7 @@
 				F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */,
 				48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */,
 				48D2C6622ABF445200129BA3 /* FeedbackViewController.swift in Sources */,
+				4883C0DE2ABFC9C5004EFD4B /* DateCell.swift in Sources */,
 				48D2C6602ABF360F00129BA3 /* HisStatViewController.swift in Sources */,
 				648E98352ABEB14900BCB09F /* AppDelegate.swift in Sources */,
 				48D2C65B2ABF345700129BA3 /* ShitViewController.swift in Sources */,
@@ -643,6 +650,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/patchthecode/JTAppleCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
@@ -654,6 +669,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4883C0DB2ABFC90E004EFD4B /* JTAppleCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */;
+			productName = JTAppleCalendar;
+		};
 		48D2C6742ABF76F800129BA3 /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
