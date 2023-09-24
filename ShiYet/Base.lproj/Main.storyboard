@@ -223,13 +223,24 @@
                     <view key="view" contentMode="scaleToFill" id="gSJ-VE-26M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQT-i0-i40">
+                                <rect key="frame" x="107" y="699" width="201" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <connections>
+                                    <action selector="Back:" destination="gHE-fs-hga" eventType="touchUpInside" id="rnB-1H-8E9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cNM-VL-LOQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsT-Ld-u4F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="1459"/>
+            <point key="canvasLocation" x="-175.36231884057972" y="1458.4821428571429"/>
         </scene>
     </scenes>
     <resources>
