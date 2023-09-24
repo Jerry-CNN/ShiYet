@@ -16,4 +16,7 @@ class DateSearchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func Back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
