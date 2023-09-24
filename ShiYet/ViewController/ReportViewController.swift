@@ -1,10 +1,29 @@
 import UIKit
+import SQLite
 
-
-class ReportViewController: UIViewController {
-
+class ReportViewController: UIViewController {    
+    static func makeReportVC(current_time: Date) -> ReportViewController {
+    let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+    
+    newViewController.current_time = current_time
+    
+    return newViewController
+    }
+    
+    var current_time: Date? = nil
     let contentView = UIView()
-
+    let dm = DatabaseManager.shared
+    
+    private let start_time = Expression<Date>("start_time")
+    private let end_time = Expression<Date>("end_time")
+    private let shape = Expression<String>("shape")
+    private let color = Expression<String>("color")
+    private let smell = Expression<String>("smell")
+    private let sticky = Expression<Bool>("sticky")
+    private let blood = Expression<Bool>("blood")
+    private let amount = Expression<String>("amount")
+    private let feeling = Expression<String>("feeling")
+    
     @IBOutlet weak var ReportSection: UIScrollView!
 
     override func viewDidLoad() {
@@ -13,7 +32,20 @@ class ReportViewController: UIViewController {
 
         // Add content to contentView (this can be any subviews you want)
         let contentLabel = UILabel()
-        contentLabel.text = "Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed.Your vertically scrollable content goes here. nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnYou can add more labels, images, or other views as needed."
+        let curRecord = dm.getRecord(start_time: current_time!)
+        let output = """
+            Start Date: \(curRecord[start_time]),
+            End Date: \(curRecord[end_time]),
+            Shape: \(curRecord[shape]),
+            Color: \(curRecord[color]),
+            Sticky: \(curRecord[sticky]),
+            Blood: \(curRecord[blood]),
+            Amount: \(curRecord[amount]),
+            Feeling: \(curRecord[feeling])
+            ----------------------------------------
+            """
+        print(curRecord.select(start_time))
+        contentLabel.text = output
         contentLabel.numberOfLines = 0 // Allow multiple lines of text
         contentView.addSubview(contentLabel)
 
@@ -59,8 +91,6 @@ class ReportViewController: UIViewController {
 
         // Add a height constraint to control vertical scrolling
         contentView.heightAnchor.constraint(greaterThanOrEqualTo: ReportSection.heightAnchor).isActive = true
-        
-
     }
     
 }

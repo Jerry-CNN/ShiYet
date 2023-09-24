@@ -134,5 +134,10 @@ class DatabaseManager {
             print("Error deleting entries: \(error)")
         }
     }
+    
+    func getRecord(start_time: Date) -> Table {
+        let userToUpdate = shit_record.filter(self.start_time == start_time)
+        return userToUpdate
+    }
 
 }

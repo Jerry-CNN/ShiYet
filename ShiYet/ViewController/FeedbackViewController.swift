@@ -38,7 +38,7 @@ class FeedbackViewController: UIViewController {
     @IBAction func submit(_ sender: Any) {
             if !submitted {
                 dm.updateRecord(start_time: current_time!, new_shape: selectedShapetag, new_color: selectedColortag, new_smell: selectedSmelltag, new_sticky: selectedStickytag, new_blood: selectedBloodtag, new_amount: selectedAmounttag, new_feeling: selectedFeeltag)
-                let reportVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+                let reportVC = ReportViewController.makeReportVC(current_time: current_time!)
 
                 // Present the FeedbackViewController
                 self.present(reportVC, animated: true, completion: nil)
