@@ -255,6 +255,7 @@
 			packageReferences = (
 				48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
+				4812CB612AC0048900C7213B /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 648E98322ABEB14900BCB09F /* Products */;
 			projectDirPath = "";
@@ -654,6 +655,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4812CB612AC0048900C7213B /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/patchthecode/JTAppleCalendar";
