@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4812CB602ABFFAEA00C7213B /* DateSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812CB5F2ABFFAEA00C7213B /* DateSearchViewController.swift */; };
 		4883C0DC2ABFC90E004EFD4B /* JTAppleCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 4883C0DB2ABFC90E004EFD4B /* JTAppleCalendar */; };
 		4883C0DE2ABFC9C5004EFD4B /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4883C0DD2ABFC9C5004EFD4B /* DateCell.swift */; };
 		48D2C65B2ABF345700129BA3 /* ShitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2C65A2ABF345700129BA3 /* ShitViewController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4812CB5F2ABFFAEA00C7213B /* DateSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSearchViewController.swift; sourceTree = "<group>"; };
 		4883C0DD2ABFC9C5004EFD4B /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		48D2C65A2ABF345700129BA3 /* ShitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShitViewController.swift; sourceTree = "<group>"; };
 		48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				48D2C65A2ABF345700129BA3 /* ShitViewController.swift */,
 				48D2C65D2ABF35F300129BA3 /* CalendarViewController.swift */,
+				4812CB5F2ABFFAEA00C7213B /* DateSearchViewController.swift */,
 				48D2C6762ABF7D5F00129BA3 /* ReportViewController.swift */,
 				48D2C65F2ABF360F00129BA3 /* HisStatViewController.swift */,
 				48D2C6612ABF445200129BA3 /* FeedbackViewController.swift */,
@@ -255,6 +258,7 @@
 			packageReferences = (
 				48D2C6732ABF76F800129BA3 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
+				4812CB612AC0048900C7213B /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 648E98322ABEB14900BCB09F /* Products */;
 			projectDirPath = "";
@@ -299,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4812CB602ABFFAEA00C7213B /* DateSearchViewController.swift in Sources */,
 				48D2C6772ABF7D5F00129BA3 /* ReportViewController.swift in Sources */,
 				F4D9C65B2ABF58CD00538FDA /* DatabaseManager.swift in Sources */,
 				48D2C65E2ABF35F300129BA3 /* CalendarViewController.swift in Sources */,
@@ -654,6 +659,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4812CB612AC0048900C7213B /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4883C0DA2ABFC90E004EFD4B /* XCRemoteSwiftPackageReference "JTAppleCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/patchthecode/JTAppleCalendar";
