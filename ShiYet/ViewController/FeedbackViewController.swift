@@ -19,6 +19,7 @@ class FeedbackViewController: UIViewController {
     
     var current_time: Date? = nil
     var submitted = false
+    let dm = DatabaseManager.shared
     
     @IBAction func submit(_ sender: Any) {
             if !submitted {
