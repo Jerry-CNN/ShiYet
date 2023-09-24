@@ -93,7 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="FY1-EL-lRc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" image="poop" selectedImage="poop (3)" id="q5K-dn-wcy"/>
+                    <tabBarItem key="tabBarItem" title="" image="poop" selectedImage="poop (3)" id="q5K-dn-wcy"/>
                     <connections>
                         <outlet property="elapsedTimeLabel" destination="ypy-ok-f0g" id="MYN-qb-koy"/>
                     </connections>

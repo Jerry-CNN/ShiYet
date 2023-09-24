@@ -48,7 +48,7 @@ class FeedbackViewController: UIViewController {
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
             } else {
-                button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+                button.backgroundColor = UIColor.white
             }
         }
     }
@@ -59,7 +59,7 @@ class FeedbackViewController: UIViewController {
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
             } else {
-                button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+                button.backgroundColor = UIColor.white
             }
         }
     }
@@ -69,7 +69,7 @@ class FeedbackViewController: UIViewController {
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
             } else {
-                button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+                button.backgroundColor = UIColor.white
             }
         }
     }
@@ -80,7 +80,7 @@ class FeedbackViewController: UIViewController {
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
             } else {
-                button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+                button.backgroundColor = UIColor.white
             }
         }
     }
@@ -91,7 +91,7 @@ class FeedbackViewController: UIViewController {
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
             } else {
-                button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+                button.backgroundColor = UIColor.white
             }
         }
     }
@@ -102,7 +102,7 @@ class FeedbackViewController: UIViewController {
             if button.isSelected {
                 button.backgroundColor = UIColor.blue
             } else {
-                button.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
+                button.backgroundColor = UIColor.white
             }
         }
     }
@@ -116,15 +116,16 @@ class FeedbackViewController: UIViewController {
     
     let shapeRadio: UIStackView = {
         let stack = UIStackView()
+        var shapeIcon:[String] = ["banana","rabbit","gravy","oatmeal"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...3{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet1Tapped(_:)), for: .touchUpInside)
+            button.setBackgroundImage(UIImage(named:shapeIcon[i]), for: .normal)
             stack.addArrangedSubview(button)
         }
         return stack
@@ -139,15 +140,16 @@ class FeedbackViewController: UIViewController {
     
     let colorRadio: UIStackView = {
         let stack = UIStackView()
+        var colorIcon:[String] = ["red","black","coffee","yellow"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
-        stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...3{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet2Tapped(_:)), for: .touchUpInside)
+            button.imageView?.contentMode = .scaleAspectFit
+            button.setBackgroundImage(UIImage(named: colorIcon[i]), for: .normal)
             stack.addArrangedSubview(button)
         }
         return stack
@@ -162,14 +164,15 @@ class FeedbackViewController: UIViewController {
     
     let amountRadio: UIStackView = {
         let stack = UIStackView()
+        var amountIcon:[String] = ["general","Large","Little"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...2{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
+            button.setTitle(amountIcon[i], for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet3Tapped(_:)), for: .touchUpInside)
             stack.addArrangedSubview(button)
         }
@@ -185,14 +188,15 @@ class FeedbackViewController: UIViewController {
     
     let feelRadio: UIStackView = {
         let stack = UIStackView()
+        var feelIcon:[String] = ["easy","difficult","again"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...2{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
+            button.setTitle(feelIcon[i], for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet4Tapped(_:)), for: .touchUpInside)
             stack.addArrangedSubview(button)
         }
@@ -208,15 +212,16 @@ class FeedbackViewController: UIViewController {
     
     let smellRadio: UIStackView = {
         let stack = UIStackView()
+        var smellIcon:[String] = ["bun","egg","deadfish","durian"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...3{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet5Tapped(_:)), for: .touchUpInside)
+            button.setBackgroundImage(UIImage(named: smellIcon[i]), for: .normal)
             stack.addArrangedSubview(button)
         }
         return stack
@@ -231,15 +236,16 @@ class FeedbackViewController: UIViewController {
     
     let bloodRadio: UIStackView = {
         let stack = UIStackView()
+        let blooda :[String] = ["blood","no blood"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...1{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
-            button.addTarget(self, action: #selector(radioButtonSet6Tapped(_:)), for: .touchUpInside)
+            button.setTitle(blooda[i], for: .normal)
+            button.setBackgroundImage(UIImage(named: blooda[i]), for: .normal)
             stack.addArrangedSubview(button)
         }
         return stack
@@ -254,14 +260,15 @@ class FeedbackViewController: UIViewController {
     
     let stickyRadio: UIStackView = {
         let stack = UIStackView()
+        let blooda :[String] = ["sticky","not sticky"]
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        for i in 1...5{
+        for i in 0...1{
             let button = UIButton()
-            button.setTitle("shape" + String(i), for: .normal)
+            button.setTitle(blooda[i], for: .normal)
             button.addTarget(self, action: #selector(radioButtonSet7Tapped(_:)), for: .touchUpInside)
             stack.addArrangedSubview(button)
         }
@@ -364,6 +371,7 @@ class FeedbackViewController: UIViewController {
             smellRadio.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             smellRadio.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             smellRadio.topAnchor.constraint(equalTo: smellLabel.bottomAnchor,constant: 20),
+            smellRadio.bottomAnchor.constraint(equalTo: smellRadio.topAnchor,constant: 60),
             bloodLabel.topAnchor.constraint(equalTo: smellRadio.bottomAnchor,constant: 20),
             bloodRadio.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bloodRadio.trailingAnchor.constraint(equalTo: view.trailingAnchor),
