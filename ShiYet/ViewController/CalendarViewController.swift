@@ -5,9 +5,11 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func test(_ sender: Any) {
-        view.backgroundColor = .black
+
+    @IBAction func DateSelected(_ sender: Any) {
+        
     }
+    
 }
 
 extension CalendarViewController: JTACMonthViewDataSource {
