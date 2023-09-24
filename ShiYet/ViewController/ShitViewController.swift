@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class  ShitViewController: UIViewController{
+class ShitViewController: UIViewController{
     
     var timer: Timer?
     var startTime: Date?
@@ -11,7 +11,6 @@ class  ShitViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func StartShitting(_ sender: Any) {
@@ -72,7 +71,7 @@ class  ShitViewController: UIViewController{
         }
 
         // Create an instance of FeedbackViewController
-        let feedbackVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+        let feedbackVC = FeedbackViewController.makeFeedbackVC(current_time: startTime!)
 
         // Present the FeedbackViewController
         self.present(feedbackVC, animated: true, completion: nil)
